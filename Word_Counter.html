@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url('count.jpg');
+      background-size: cover;
+      background-position: center;
+      color: black;
+      height: 100vh; /* Ensure full height of viewport */
+      display: flex; /* Enable flexbox layout */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+    }
+    #word-input {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white; /* Change text color for better contrast */
+      width: 80%; /* Reduce width of textarea */
+      height: 150px; /* Adjust height as needed */
+      padding: 10px; /* Add padding for better appearance */
+      border-radius: 10px; /* Add border radius */
+      border: none; /* Remove border */
+      resize: none; /* Disable resizing */
+      margin-bottom: 20px; /* Add space below textarea */
+      position: relative;
+      left: 300px;
+      bottom: 60px;
+    }
+
+    #heading {
+      position: relative;
+      bottom: 60px; /* Adjust the top position */
+      left: 40px; /* Adjust the right position */
+    }
+    #word-count-btn {
+      margin-top: 20px; /* Add space above button */
+      position: relative;
+      left: 300px;
+      bottom: 80px;
+    }
+    #word-result {
+      position: absolute;
+      left: 315px;
+      bottom: -13px;
+    }
+    .btn-primary {
+      background-color: #f04040;
+      border-color: #f04040;
+    }
+    .btn-primary:hover {
+      background-color: #ff6b6b;
+      border-color: #ff6b6b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2 id="heading" class="text-center mb-4">Word Counter</h2>
+        <textarea id="word-input" class="form-control" rows="5"></textarea>
+        <div id="word-result" class="mt-3" style="display: none;">
+          <h3>Word Count:</h3>
+          <p id="word-count"></p>
+        </div>
+        <button id="word-count-btn" class="btn btn-primary">Count Words</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("#word-count-btn").click(function() {
+        var input = $("#word-input").val().trim();
+        var wordCount = input.split(/\s+/).filter(function(word) {
+          return word.length > 0;
+        }).length;
+        $("#word-result").show();
+        $("#word-count").text(wordCount);
+      });
+    });
+  </script>
+</body>
+</html>

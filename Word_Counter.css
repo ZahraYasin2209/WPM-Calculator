@@ -1,0 +1,48 @@
+body {
+    background-image: url('count.jpg');
+    background-size: cover;
+    background-position: center;
+    color: black;
+    height: 100vh; /* Ensure full height of viewport */
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  #word-input {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white; /* Change text color for better contrast */
+    width: 80%; /* Reduce width of textarea */
+    height: 150px; /* Adjust height as needed */
+    padding: 10px; /* Add padding for better appearance */
+    border-radius: 10px; /* Add border radius */
+    border: none; /* Remove border */
+    resize: none; /* Disable resizing */
+    margin-bottom: 20px; /* Add space below textarea */
+    position: relative;
+    left: 300px;
+    bottom: 60px;
+  }
+  #heading {
+    position: relative;
+    bottom: 60px; /* Adjust the top position */
+    left: 40px; /* Adjust the right position */
+  }
+  #word-count-btn {
+    margin-top: 20px; /* Add space above button */
+    position: relative;
+    left: 300px;
+    bottom: 80px;
+  }
+  #word-result {
+    position: absolute;
+    left: 315px;
+    bottom: -13px;
+  }
+  .btn-primary {
+    background-color: #f04040;
+    border-color: #f04040;
+  }
+  .btn-primary:hover {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+  }
